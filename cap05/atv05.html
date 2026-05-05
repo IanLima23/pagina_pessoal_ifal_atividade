@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 05 — AT05 — Pesquisa Acadêmica</title>
+</head>
+<body>
+
+  <header>
+    <h1>Pesquisa Acadêmica — Sistemas de Informação</h1>
+    <p><a href="../index.html">← Voltar para a página principal</a></p>
+  </header>
+
+  <main>
+
+    <p><strong>* Campos obrigatórios</strong></p>
+
+    <form
+      action="https://httpbin.org/post"
+      method="post"
+      novalidate
+    >
+
+      <!-- Fieldset 1 — Perfil do estudante -->
+      <fieldset>
+        <legend>Perfil do estudante</legend>
+
+        <div>
+          <label for="nome">
+            Nome completo: <span aria-hidden="true">*</span>
+          </label><br>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            aria-required="true"
+            autocomplete="name"
+          />
+        </div>
+
+        <br>
+
+        <div>
+          <label for="matricula">
+            Matrícula: <span aria-hidden="true">*</span>
+          </label><br>
+          <input
+            type="text"
+            id="matricula"
+            name="matricula"
+            pattern="\d{7}"
+            required
+            aria-required="true"
+            title="A matrícula deve conter 7 dígitos numéricos"
+          />
+        </div>
+
+        <br>
+
+        <div>
+          <label for="email">
+            E-mail institucional: <span aria-hidden="true">*</span>
+          </label><br>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            aria-required="true"
+            aria-invalid="false"
+            aria-describedby="erro-email"
+            autocomplete="email"
+            onblur="validarEmail(this)"
+          />
+          <p id="erro-email" role="alert"></p>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="periodo">Período atual</label><br>
+          <select id="periodo" name="periodo">
+            <option value="">Selecione</option>
+            <option>1º</option>
+            <option>2º</option>
+            <option>3º</option>
+            <option>4º</option>
+            <option>5º</option>
+            <option>6º</option>
+            <option>7º</option>
+            <option>8º</option>
+          </select>
+        </div>
+
+        <br>
+
+        <fieldset>
+          <legend>Turno</legend>
+          <label>
+            <input type="radio" name="turno" value="manha" /> Manhã
+          </label><br>
+          <label>
+            <input type="radio" name="turno" value="tarde" /> Tarde
+          </label><br>
+          <label>
+            <input type="radio" name="turno" value="noite" /> Noite
+          </label>
+        </fieldset>
+
+      </fieldset>
+
+      <br>
+
+      <!-- Fieldset 2 — Perfil tecnológico -->
+      <fieldset>
+        <legend>Perfil tecnológico</legend>
+
+        <fieldset>
+          <legend>Tecnologias que conhece</legend>
+
+          <label><input type="checkbox" name="tecnologias[]" value="html" /> HTML</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="css" /> CSS</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="javascript" /> JavaScript</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="python" /> Python</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="java" /> Java</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="sql" /> SQL</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="git" /> Git</label><br>
+          <label><input type="checkbox" name="tecnologias[]" value="linux" /> Linux</label>
+
+        </fieldset>
+
+        <br>
+
+        <div>
+          <label for="linguagem">Linguagem de programação favorita</label><br>
+          <select id="linguagem" name="linguagem">
+            <optgroup label="Paradigma Procedural">
+              <option>C</option>
+              <option>Python</option>
+            </optgroup>
+            <optgroup label="Paradigma Orientado a Objetos">
+              <option>Java</option>
+              <option>C#</option>
+            </optgroup>
+            <optgroup label="Paradigma Funcional">
+              <option>Haskell</option>
+              <option>Elixir</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="experiencia">Anos de experiência com programação</label><br>
+          <input
+            type="number"
+            id="experiencia"
+            name="experiencia"
+            min="0"
+            max="30"
+          />
+        </div>
+
+        <br>
+
+        <div>
+          <label for="portfolio">Portfólio ou LinkedIn</label><br>
+          <input
+            type="url"
+            id="portfolio"
+            name="portfolio"
+            placeholder="https://"
+          />
+        </div>
+
+      </fieldset>
+
+      <br>
+
+      <!-- Fieldset 3 — Avaliação da disciplina -->
+      <fieldset>
+        <legend>Avaliação da disciplina</legend>
+
+        <div>
+          <label for="nota">
+            Nota para a disciplina: <span id="valor-nota">5</span>/10
+          </label><br>
+          <input
+            type="range"
+            id="nota"
+            name="nota"
+            min="0"
+            max="10"
+            value="5"
+            oninput="document.getElementById('valor-nota').textContent = this.value"
+          />
+        </div>
+
+        <br>
+
+        <fieldset>
+          <legend>Satisfação com o material didático</legend>
+
+          <label><input type="radio" name="satisfacao" value="muito_satisfeito" /> Muito satisfeito</label><br>
+          <label><input type="radio" name="satisfacao" value="satisfeito" /> Satisfeito</label><br>
+          <label><input type="radio" name="satisfacao" value="neutro" /> Neutro</label><br>
+          <label><input type="radio" name="satisfacao" value="insatisfeito" /> Insatisfeito</label><br>
+          <label><input type="radio" name="satisfacao" value="muito_insatisfeito" /> Muito insatisfeito</label>
+
+        </fieldset>
+
+        <br>
+
+        <div>
+          <label for="sugestoes">Sugestões de melhoria</label><br>
+          <textarea
+            id="sugestoes"
+            name="sugestoes"
+            rows="6"
+            maxlength="1000"
+          ></textarea>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="data_preenchimento">
+            Data de preenchimento: <span aria-hidden="true">*</span>
+          </label><br>
+          <input
+            type="date"
+            id="data_preenchimento"
+            name="data_preenchimento"
+            required
+            aria-required="true"
+          />
+        </div>
+
+      </fieldset>
+
+      <br>
+
+      <!-- Fieldset 4 — Consentimento e envio -->
+      <fieldset>
+        <legend>Consentimento e envio</legend>
+
+        <label>
+          <input
+            type="checkbox"
+            name="consentimento"
+            required
+            aria-required="true"
+          />
+          Autorizo o uso dos dados para fins acadêmicos *
+        </label>
+
+        <input
+          type="hidden"
+          name="pesquisa_id"
+          value="PWEB1-2026-1"
+        />
+
+      </fieldset>
+
+      <br>
+
+      <button type="submit">Enviar pesquisa</button>
+
+    </form>
+
+  </main>
+
+  <script>
+    function validarEmail(campo) {
+      const erro = document.getElementById('erro-email');
+      if (!campo.value.endsWith('@ifal.edu.br')) {
+        erro.textContent = 'Informe seu e-mail institucional (@ifal.edu.br)';
+        campo.setAttribute('aria-invalid', 'true');
+      } else {
+        erro.textContent = '';
+        campo.setAttribute('aria-invalid', 'false');
+      }
+    }
+
+    document.getElementById('data_preenchimento').max =
+      new Date().toISOString().split('T')[0];
+  </script>
+
+</body>
+</html>

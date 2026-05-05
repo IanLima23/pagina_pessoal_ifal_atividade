@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+</head>
+<body>
+
+<header>
+    <h1>Recursos Multimídia — Introdução à Web</h1>
+</header>
+
+<main>
+
+    <section>
+        <h2>Vídeo Educacional</h2>
+
+        <figure>
+            <video controls width="800" height="450"
+                   poster="poster-python.jpg"
+                   preload="metadata">
+
+                <source src="video-python.mp4" type="video/mp4">
+                <source src="video-python.webm" type="video/webm">
+
+                <track kind="subtitles"
+                       src="legenda-python.vtt"
+                       srclang="pt"
+                       label="Português"
+                       default>
+
+                <p>
+                    Seu navegador não suporta vídeo HTML5.
+                    <a href="video-python.mp4">Baixar o vídeo</a>
+                </p>
+            </video>
+
+            <figcaption>
+                Vídeo sobre introdução à linguagem Python.
+                Conteúdo educacional.
+            </figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Áudio</h2>
+
+        <figure>
+            <audio controls preload="metadata">
+                <source src="musica-pixabay.mp3" type="audio/mpeg">
+                <source src="musica-pixabay.ogg" type="audio/ogg">
+
+                <p>
+                    Seu navegador não suporta áudio HTML5.
+                    <a href="musica-pixabay.mp3">Baixar o áudio</a>
+                </p>
+            </audio>
+
+            <figcaption>
+                Música instrumental do Pixabay.
+            </figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Vídeo Externo</h2>
+
+        <figure>
+            <iframe
+                width="800"
+                height="450"
+                src="https://www.youtube-nocookie.com/embed/kqtD5dpn9C8"
+                title="Curso de Python para iniciantes"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <figcaption>
+                Vídeo: Python para Iniciantes - Aprenda a Programar com Python em 1 Hora —
+                Canal Programming with Mosh (YouTube).
+            </figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Imagem Institucional</h2>
+
+        <figure>
+            <picture>
+                <source media="(min-width: 768px)" srcset="logo-ifal.png">
+                <img src="logo-ifal.png"
+                     alt="Logotipo do Instituto Federal de Alagoas"
+                     width="300"
+                     height="300">
+            </picture>
+
+            <figcaption>
+                Logotipo oficial do Instituto Federal de Alagoas (IFAL).
+            </figcaption>
+        </figure>
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        Atividade 4 — Capítulo 4 | Introdução à Web |
+        Aluno: Ian Lima |
+        <time datetime="2026-05-01">Maio de 2026</time>
+    </p>
+
+</footer>
+
+</body>
+</html>
