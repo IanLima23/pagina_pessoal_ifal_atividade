@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT05 — Mini Design System</title>
+  <link rel="stylesheet" href="at05-style.css" />
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero__container">
+      <h1 class="hero__titulo">Aura Design System</h1>
+      <p class="hero__subtitulo">Um ecossistema visual fluido, moderno e estruturado sob os rígidos padrões semânticos e de arquitetura escalável.</p>
+      <a href="#documentacao" class="hero__cta">Explorar Documentação ↓</a>
+    </div>
+  </section>
+
+  <main class="ds-main" id="documentacao">
+    <header class="ds-header">
+      <h2>Catálogo de Tokens e Componentes</h2>
+      <p><a href="../index.html">← Voltar para a página principal</a></p>
+    </header>
+
+    <section class="ds-secao">
+      <h3 class="ds-secao__titulo">Componente: Botões (Buttons)</h3>
+      <div class="ds-flex-gap">
+        <button class="btn btn--primario">Ação principal</button>
+        <button class="btn btn--secundario">Ação secundária</button>
+        <button class="btn btn--perigo">Ação destrutiva</button>
+        <button class="btn btn--primario" disabled>Desabilitado</button>
+      </div>
+    </section>
+
+    <section class="ds-secao">
+      <h3 class="ds-secao__titulo">Componente: Cartões Informativos (Cards)</h3>
+      <div class="ds-grid-cards">
+        <article class="card">
+          <span class="card__badge">Destaque</span>
+          <div class="card__imagem"></div>
+          <div class="card__corpo">
+            <h3 class="card__titulo">Design Atômico</h3>
+            <p class="card__texto">Entenda como estruturar seus tokens globais a partir de pequenas estruturas indivisíveis e escaláveis de código sustentável.</p>
+            <a class="card__link" href="#">Saiba mais →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ds-secao">
+      <h3 class="ds-secao__titulo">Tokens Globais: Paleta de Cores</h3>
+      <table class="tabela-tokens">
+        <thead>
+          <tr>
+            <th>Visualização</th>
+            <th>Token Variável</th>
+            <th>Aplicação de Interface</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div style="background-color: #4f46e5; width: 40px; height: 40px; border-radius: 4px;"></div></td>
+            <td><code>--cor-primaria</code></td>
+            <td>Identidade principal, botões de Call To Action prioritários.</td>
+          </tr>
+          <tr>
+            <td><div style="background-color: #0ea5e9; width: 40px; height: 40px; border-radius: 4px;"></div></td>
+            <td><code>--cor-secundaria</code></td>
+            <td>Elementos de suporte secundários e rótulos secundários.</td>
+          </tr>
+          <tr>
+            <td><div style="background-color: #f59e0b; width: 40px; height: 40px; border-radius: 4px;"></div></td>
+            <td><code>--cor-destaque</code></td>
+            <td>Badges de atenção, alertas sutis e estados ativos.</td>
+          </tr>
+          <tr>
+            <td><div style="background-color: #10b981; width: 40px; height: 40px; border-radius: 4px;"></div></td>
+            <td><code>--cor-sucesso</code></td>
+            <td>Mensagens positivas, feedbacks válidos e inputs confirmados.</td>
+          </tr>
+          <tr>
+            <td><div style="background-color: #ef4444; width: 40px; height: 40px; border-radius: 4px;"></div></td>
+            <td><code>--cor-erro</code></td>
+            <td>Ações destrutivas, erros impeditivos e validações inválidas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-secao">
+      <h3 class="ds-secao__titulo">Componente: Formulário Controlado (Forms)</h3>
+      <form class="form" novalidate>
+        <div class="form__grupo">
+          <label class="form__label" for="nome-ds">Nome Completo:</label>
+          <input class="form__input" type="text" id="nome-ds" name="nome" required placeholder="Ex: João Silva" />
+          <span class="form__mensagem-erro">Este campo é obrigatório.</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="email-ds">E-mail Corporativo:</label>
+          <input class="form__input" type="email" id="email-ds" name="email" required placeholder="nome@empresa.com" />
+          <span class="form__mensagem-erro">Insira um endereço de e-mail válido.</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="cargo-ds">Cargo Atual (Opcional):</label>
+          <input class="form__input" type="text" id="cargo-ds" name="cargo" placeholder="Ex: Desenvolvedor Front-end" />
+        </div>
+
+        <button class="btn btn--primario form__botao" type="submit">Cadastrar no Sistema</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+:root {
+    --cor-principal: #0f62fe;
+    --cor-secundaria: #161616;
+    --cor-fundo: #f4f4f4;
+    --cor-card: #ffffff;
+    --fonte-titulos: 'Segoe UI', system-ui, sans-serif;
+    --fonte-texto: 'Georgia', serif;
+    --gap-padrao: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    line-height: 1.6;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-padrao);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.supporting {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.supporting .explanation, 
+.supporting .participation, 
+.supporting .benefits, 
+.supporting .requirements {
+    background: var(--cor-card);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.sidebar {
+    background: var(--cor-secundaria);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.sidebar a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .page-wrapper {
+        grid-template-columns: 2fr 1fr; 
+        grid-template-areas: 
+            "header header"
+            "content sidebar";
+    }
+
+    .intro {
+        grid-area: header;
+    }
+
+    .supporting {
+        grid-area: content;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        height: max-content;
+        position: sticky;
+        top: 20px; 
+    }
+}
