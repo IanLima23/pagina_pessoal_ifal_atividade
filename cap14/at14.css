@@ -1,0 +1,200 @@
+:root {
+    --bg-pagina: #f4f6f9;
+    --bg-card: #ffffff;
+    --texto-principal: #1f2937;
+    --texto-secundario: #4b5563;
+    --cor-primaria: #2563eb;
+    --cor-hover: #1d4ed8;
+    --borda: #e5e7eb;
+    --fonte: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body.tema-escuro {
+    --bg-pagina: #111827;
+    --bg-card: #1f2937;
+    --texto-principal: #f9fafb;
+    --texto-secundario: #d1d5db;
+    --cor-primaria: #10b981;
+    --cor-hover: #059669;
+    --borda: #374151;
+}
+
+body.tema-azul {
+    --bg-pagina: #e0f2fe;
+    --bg-card: #ffffff;
+    --texto-principal: #0369a1;
+    --texto-secundario: #0c4a6e;
+    --cor-primaria: #0284c7;
+    --cor-hover: #0369a1;
+    --borda: #bae6fd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--bg-pagina);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, main, footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+section {
+    background-color: var(--bg-card);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+hr {
+    display: none; 
+}
+
+section h2 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--borda);
+    padding-bottom: 8px;
+}
+
+#perfil {
+    text-align: center;
+}
+
+#fotoPerfil {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 4px solid var(--borda);
+    transition: transform 0.3s ease;
+}
+
+#nomePerfil {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+#matriculaPerfil, #cursoPerfil {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+#biografiaPerfil {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: var(--texto-secundario);
+}
+
+.perfil-destacado {
+    border: 3px dashed var(--cor-primaria) !important;
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(37, 99, 235, 0.03) !important;
+}
+
+body.tema-escuro .perfil-destacado {
+    background-color: rgba(16, 185, 129, 0.05) !important;
+}
+
+label {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+select, input[type="text"], input[type="email"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 8px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background-color: var(--bg-pagina);
+    color: var(--texto-principal);
+    font-size: 1rem;
+    outline: none;
+}
+
+select:focus, input:focus {
+    border-color: var(--cor-primaria);
+}
+
+input[type="range"] {
+    vertical-align: middle;
+}
+
+#valorFonte {
+    font-weight: bold;
+    margin-left: 8px;
+    color: var(--cor-primaria);
+}
+
+button {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin: 4px;
+}
+
+button:hover {
+    background-color: var(--cor-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#btnAtualizarContato {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+#contato h3 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+#estatisticas p {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+#contadorAcoes, #ultimaAcao {
+    color: var(--cor-primaria);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
