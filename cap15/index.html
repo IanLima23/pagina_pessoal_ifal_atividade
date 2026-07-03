@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Escola Técnica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Escola Técnica do IFAL</h1>
+        <p>Formulário de Inscrição para Novos Alunos</p>
+    </header>
+
+    <main>
+        <form id="formInscricao" novalidate>
+            
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required minlength="3" placeholder="Seu nome completo">
+                    <span class="error-message" id="erro-nome"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+                    <span class="error-message" id="erro-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required placeholder="(82) 99999-9999" maxlength="15">
+                    <span class="error-message" id="erro-telefone"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                    <span class="error-message" id="erro-nascimento"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Opções do Curso</legend>
+
+                <div class="form-group">
+                    <label for="curso">Curso Desejado:</label>
+                    <select id="curso" name="curso" required>
+                        <option value="">-- Selecione um curso --</option>
+                        <option value="informatica">Técnico em Informática</option>
+                        <option value="redes">Técnico em Redes de Computadores</option>
+                        <option value="sistemas">Desenvolvimento de Sistemas</option>
+                    </select>
+                    <span class="error-message" id="erro-curso"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Turno:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="turno" value="matutino" required> Matutino</label>
+                        <label><input type="radio" name="turno" value="vespertino"> Vespertino</label>
+                        <label><input type="radio" name="turno" value="noturno"> Noturno</label>
+                    </div>
+                    <span class="error-message" id="erro-turno"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Áreas de Interesse (Selecione no mínimo 2):</label>
+                    <div class="checkbox-group" id="areaInteresseGroup">
+                        <label><input type="checkbox" name="interesse" value="programacao"> Programação</label>
+                        <label><input type="checkbox" name="interesse" value="banco-dados"> Banco de Dados</label>
+                        <label><input type="checkbox" name="interesse" value="redes-infra"> Redes e Infraestrutura</label>
+                        <label><input type="checkbox" name="interesse" value="design-ux"> Design e UX</label>
+                    </div>
+                    <span class="error-message" id="erro-interesse"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Segurança e Mídia</legend>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="senha" name="senha" required minlength="8">
+                        <button type="button" class="btn-toggle-pass" data-target="senha">👁️</button>
+                    </div>
+                    <div id="forcaSenhaContainer" class="forca-senha-bar"><div></div></div>
+                    <span class="error-message" id="erro-senha"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar Senha:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+                        <button type="button" class="btn-toggle-pass" data-target="confirmarSenha">👁️</button>
+                    </div>
+                    <span class="error-message" id="erro-confirmarSenha"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Foto de Perfil (Opcional - JPG/PNG max 2MB):</label>
+                    <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png">
+                    <div id="imagePreview" class="preview-box"></div>
+                    <span class="error-message" id="erro-foto"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Finalização</legend>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem/Motivação (50 a 500 caracteres):</label>
+                    <textarea id="mensagem" name="mensagem" required minlength="50" maxlength="500" rows="5" placeholder="Escreva aqui por que deseja estudar conosco..."></textarea>
+                    <div class="char-count"><span id="charCount">0</span>/500</div>
+                    <span class="error-message" id="erro-mensagem"></span>
+                </div>
+
+                <div class="form-group checkbox-termo">
+                    <label><input type="checkbox" id="termos" name="termos" required> Eu aceito os termos e condições de inscrição.</label>
+                    <span class="error-message" id="erro-termos"></span>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="reset" id="btnLimpar" class="btn-secondary">Limpar</button>
+                <button type="submit" id="btnEnviar" class="btn-primary">Enviar Inscrição</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="js/util.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
